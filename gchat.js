@@ -1,6 +1,6 @@
-import debug from 'debug';
+import { debuglog } from 'node:util';
 import build from 'pino-abstract-transport';
-const log = debug('logger:gchat');
+const log = debuglog('logger:gchat');
 export default async function (options) {
     const { link, timeout = 30000 } = options;
     return build(async (source) => {
@@ -19,7 +19,7 @@ export default async function (options) {
             })
                 .then((res) => Promise.all([res, res.text()]))
                 .then(([res, text]) => {
-                log(res.status, text);
+                log(`${res.status} ${text}`);
                 if (!res.ok)
                     throw new Error(text);
             })

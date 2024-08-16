@@ -1,4 +1,4 @@
-import { default as pino } from 'pino';
+import { pino } from 'pino';
 export function createLogger(options) {
     const { level = 'info', transports = [], ...misc } = options;
     const targets = transports.map(({ type, link, level }) => {

@@ -1,4 +1,4 @@
-import { default as pino } from 'pino';
+import { pino } from 'pino';
 export type Level = pino.Level;
 type Transport = {
     type: 'gchat';
