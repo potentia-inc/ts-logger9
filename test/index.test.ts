@@ -1,4 +1,3 @@
-/* eslint-disable jest/expect-expect */
 import assert from 'node:assert'
 import { createServer } from 'node:http'
 import { createLogger } from '../src/index.js'
